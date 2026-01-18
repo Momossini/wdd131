@@ -1,6 +1,6 @@
 :root {
     --primary-color: #042a2b;
-    --secondary-color: #4b88a2;
+    --secondary-color: #004461;
     --accent-color1:#efca08;
     --accent-color2:#702632;
     --white: #ffffff;
@@ -81,7 +81,6 @@ hr {
 figcaption em {
     text-align: center;
     font-size: 0.8rem;
-    text-align: center;
     margin-top: 0.25rem;
     width: 100%;
     display: block;
