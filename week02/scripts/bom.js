@@ -2,18 +2,26 @@ let input = document.querySelector('#favchap');
 let button = document.querySelector('button');
 let list = document.querySelector('#list');
 
-let li = document.createElement('li');
 
-let deleteBtn = document.createElement('button');
+button.addEventListener('click', function () {
+    if (input.value.trim() !== '') {
+        let li = document.createElement('li');
+        let deleteBtn = document.createElement('button');
 
-deleteBtn.setAttribute('aria-label', 'close');
+        li.textContent = input.value;
+        deleteBtn.textContent = '❌';
 
-deleteBtn.setAttribute('id', 'close-button');
+        deleteBtn.setAttribute('aria-label', 'close');
+        deleteBtn.setAttribute('id', 'close-button');
 
-li.textContent = input.value;
+        li.appendChild(deleteBtn);
+        list.append(li);
+        
+        deleteBtn.addEventListener('click', function () {
+            list.removeChild(li);
+            input.focus();
+            input.value = '';
+        });
+    }
+});
 
-deleteBtn.textContent = '❌';
-
-li.appendChild(deleteBtn);
-
-list.appendChild(li);
